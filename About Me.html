@@ -1,33 +1,98 @@
+<!--
+Name: Salema Giscombe
+ID Number: 2004762
+Program: Web Programming
+Date: October 6, 2023.
+Individual Assignment 2
+-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>My Personality</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Website</title>
+	    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Salema Giscombe" />
+        <meta name="description" content = "My Website"/>
+        <link rel="stylesheets" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link type="text/css" rel="stylesheets" href="stylesheets.css"/>
+</head>
 <style>
-.topnav {
-  overflow: hidden;
-  <!-- background-color: #333; -->
+
+<!-- Control the box-sizing model, font, hide elements with the "mySlides" class, and center images. 
+It also defines the styles for a navigation bar, dropdown menus, and their associated elements, with color variations on hover and focus states.
+ -->
+* {box-sizing: border-box}
+    <!-- body {font-family: Verdana, sans-serif; margin:0} -->
+    .mySlides {display: none}
+    img {vertical-align: middle;}
+
+.navbar {
+	overflow: hidden;
+	background-color: #4B0082;<!--Indigo-->
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-.topnav a {
+.navbar a {
   float: left;
-  color: #f2f2f2;
+  font-size: 17px;
+  color: #f2f2f2;<!--White-->
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+
+.dropdown {
+  float: left;
+  overflow: hidden;
 }
 
-<!-- For the font and background color of the selected option.-->
-.topnav a.active {
-  background-color: #04AA6D;
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
   color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: #B22222; color: #000;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #8B0000;<!--Dark Red-->
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #B22222;
+}
+
+.show {
+  display: block;
+}
+
+
+
 
 <!-- To style the table -->
 table, th, td {
@@ -36,11 +101,13 @@ table, th, td {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #333;
+	background-color: #8B0000; <!--Dark Red -->
+    color: #FFD700; <!-- Gold-->
+    <!-- color: #333; -->
 }
 
 a {
@@ -59,7 +126,6 @@ header {
     text-align: center;
 
 
-
 footer {
     background-color: #333;
     color: #fff;
@@ -72,138 +138,248 @@ img {
     display: block;
     margin: 0 auto;
 }
+
+<!-- Slideshow container -->
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    }
+
+<!-- Next & previous buttons -->
+.prev, .next {
+	cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    }
+
+<!-- Position the "next button" to the right -->
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    }
+
+<!-- On hover, add a black background color with a little bit see-through -->
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    }
+
+<!-- Caption text -->
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    }
+
+<!-- Number text (1/3 etc) -->
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    }
+
+<!-- The dots/bullets/indicators -->
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+	}
+
+.active, .dot:hover {
+	background-color: #717171;
+	}
+
+<!-- On smaller screens, decrease text size -->
+	@media only screen and (max-width: 300px) {
+	.prev, .next,.text {font-size: 11px}
+	}
+
+<!-- To indent paragraphs -->
 .indent {
     padding-left: 20px;
  }
+ 
+<!-- To create a blank row in tables -->
+css
+.blank-row td {
+    display: none;
+}
 </style>
-</head>
-
-<body>
-    <header>
-        <h1>Personality Page</h1><hr>
+<body style="background-color: #4B0082; color: #f2f2f2;">
+    <header style="background-color: #4B0082; color: white; text-align: center;">
+        <h1>Welcome to my Website</h1>
     </header>
-		<nav>
-			<div class="topnav">
-				<a class="active" href="index.html">Home</a>
-				<a href="about me.html">My Personality</a>
-				<a href="Personal Development.html">Personal Development</a>
-				<a href="Professional Page.html">My CV</a>
-				<a href="Story Board.html">Storyboard</a>
-				<a href="Reference Page.html">References</a>
+    <nav>
+		<div class="navbar">
+			<a class="active" href="index.html" style="color: #f2f2f2;">Home</a>
+			<div <div class="dropdown">
+			<button class="dropbtn" onclick="myFunction()">Menu
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content" id="myDropdown">
+					<a href="about me.html" style="color: #f2f2f2;">My Personality</a><br>
+					<a href="Personal Development.html" style="color: #f2f2f2;">Personal Development</a><br>
+					<a href="Professional Page.html" style="color: #f2f2f2;">My CV</a><br>
+					<a href="Story Board.html" style="color: #f2f2f2;">Storyboard</a><br>
+					<a href="Reference Page.html" style="color: #f2f2f2;">References</a><br>
 			</div>
-		</nav><hr>
-	<main>
-		<p>Hi, I'm Salema Giscombe. This is my personal website.</p><hr>
-		<section id="Personality">
-			<!-- Question 3 a. -->
-			<h2> <u>Personality</u> </h2>
-			<h3>My Strongest Trait and Its Impact on my Academic Life</h3>
-				<p>What would i consider my traits and hobbies?</p>
-					<ul>
-						<li>Introversion</li>
-						<li>Adaptability</li>
-						<li>Perfectionist</li>
-						<li>Procrastinator</li>
-						<li>Swimming</li>
-						<li>Crochet</li>
-						<li>Listening to music</li>
-						<li>Reading romance novels or light novels</li>
-					</ul><br>
-				<p>My strongest trait is that I'm a perfectionist and my worst trait being I'm a procrastinator.
-				Being a perfectionist and a procrastinator can have both positive and negative impacts on my 
-				school or academic life. Let's explore how these traits can affect academic performance:
-					<ul>
-						<li>Positive Impacts</li>
-							<ul>
-								<li>High Standards</li>
-								<li>Attention to Detail</li>
-								<li>Thoroughness</li>
-								<li>Pressure Performance</li>
-								<li>Creativity</li>
-							</ul>
-						<li>Negative Impacts</li>
-							<ul>
-								<li>Time-Consuming</li>
-								<li>Stress and Anxiety</li>
-								<li>Procrastination</li>
-								<li>Missed Deadlines</li>
-								<li>Quality Compromised</li>
-								<li>Stress and Anxiety</li>
-							</ul>
-					</ul>
-				</p><br>
-				<p>How does it affect my academic life? </p>
-					<p style="padding-left:20px">
-					I may delay starting tasks because I fear not meeting my own high standards. 
-					This can lead to procrastination, creating a cycle of stress and missed deadlines. 
-					Managing time effectively is crucial for students. I sometimes struggle to allocate time efficiently 
-					due to being focused on perfection, while also struggling to manage time wisely, leading to last-minute rushes. 
-					To thrive academically, it's essential to find a balance. This might involve setting realistic goals, breaking 
-					tasks into smaller, manageable steps, and seeking support when necessary. Developing time management skills and 
-					practicing self-compassion can also help mitigate the negative impacts of perfectionism and procrastination on academic life.
-					</p><hr>
-					
-			<!-- Question 3 b -->
-			<h3>Personal Quote</h3>
-				<p>One of my favorite quotes "You've gotta crave it and chase it..."
-				conveys a powerful message about determination, ambition, and the pursuit of one's goals and dreams.</p>
-					<blockquote>
-						You've gotta crave it and chase it until you're close enough to taste it.
-					</blockquote><br>
-				<ul>What it means:
-					<li>To Crave it
-						<ul>
-							<li>To "crave" something means to have a strong and intense desire for it.</li>
-							<li>"it" refers to a specific goal or aspiration that you deeply desire to achieve.</li>
-							<li>This part of the quote emphasizes the importance of having a burning passion or longing for your goal.</li>
-							<li>It's not enough to casually want something; you must have an insatiable hunger for it.</li>
-						</ul>
-					</li>
-					<li>To Chase It
-						<ul>
-							<li>"Chasing" in this context signifies taking active and relentless steps toward your goal.</li>
-							<li>It implies that you should be proactive and determined in your pursuit, not passive or complacent.</li>
-							<li>Chasing your goal involves hard work, dedication, and perseverance.</li>
-							<li>It's about actively seeking opportunities, making sacrifices, and overcoming obstacles to move 
-							closer to your objective.</li>
-						</ul>
-					</li>
-					<li>Taste it
-						<ul>
-							<li>This part of the quote emphasizes the idea that you should keep pushing yourself 
-							until you are on the verge of achieving your goal.</li>
-							<li>It suggests that you should continue your efforts until you can almost "taste" the 
-							success or fulfillment that comes with accomplishing what you set out to do.</li>
-							<li> It's about not giving up when you're close to the finish line.</li>
-						</ul>
-					</li>
-				</ul>
-			<hr>
-			<!-- Question 3 c. -->
-			<h3>Personality Assessment</h3>
-				<!-- The external link is here -->
-				<p>I took the <a href="http://similarminds.com/" target="_blank">Keirsey Temperament Sorter personality test</a> 
-				to assess my personality.</p>
-    
-				<!-- Embed the screenshot image here -->
-				<img src="..\Assets\Screenshot.png" alt="Personality Test Results">
-    
-				<p>
-					Personality tests like the one categorizing individuals as "Guardians" often have a degree of validity in general.
-					They are based on established psychological theories and research, and they can provide insights into broad 
-					personality traits and tendencies. However, it's crucial to understand that personality is complex, and no single 
-					test can fully capture its nuances. Moreover, different tests may yield slightly different results. I believe 3/4 of
-					the information is correct. The first 3 conjectures appears to be in line with my personality, however I dont participate
-					in societal actions, injustice, etc.
-				</p>
-        </section>
+		</div>
+		
+		<script>
+		/* When the user clicks on the button, 
+			toggle between hiding and showing the dropdown content */
+		function myFunction() 
+		{
+			document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function(e) 
+		{
+		if (!e.target.matches('.dropbtn')) 
+			{
+			var myDropdown = document.getElementById("myDropdown");
+				if (myDropdown.classList.contains('show')) {
+				myDropdown.classList.remove('show');
+				}
+			}
+		}
+		</script>
+	</nav>
+		
+    <main>
+		<table>
+			<tr>
+				<td>
+					<section id="section2">
+					<th colspan="3">About Me</th>
+					</section>					
+				</td> 
+			</tr>
+			<tr>
+				<td class="blank-row" width="20%"></td>
+				<td style="padding-left:16px">Hi, I'm Salema. I'm excited to take this opportunity to introduce 
+						myself and share a bit about who I am, what I'm passionate about, 
+						and what you can expect from this blog in the future.</td>
+				<td class="blank-row" width="20%"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">
+					<section id="Bookmarkers">
+						<p style="padding-left:16px">Wanna jump to getting to know
+							<a href="About me.html#Personality" style="color: #4B0082;"> me?</a></p>
+					</section>
+				</td>
+			</tr>
+		<tr>
+			<td class="blank-row" width="20%"></td>
+			<td align="center">
+				<section id="section3">
+					<h2>How I look</h2>
+					<p style="padding-left:16px">If you have any questions, feel free to contact me:</p>					
+					<div class="slideshow-container">
+							<div class="mySlides fade">
+								<div class="numbertext">1 / 4</div>
+								<a href="mailto:sallygiscombe@gmail.com">
+									<img src="..\Assets\selfie.jpg" alt="My Picture" 
+									width="70%" height="70%" align="center">
+								</a>
+								<div class="text">Selfie</div>
+							</div>
+
+						<div class="mySlides fade">
+							<div class="numbertext">2 / 4</div>
+							<img src="..\Assets\Mom.jpg" alt="Our Picture" 
+								width="70%" height="70%" align="center">
+							<div class="text"> Me and my mom.</div>
+						</div>
+
+						<div class="mySlides fade">
+							<div class="numbertext">3 / 4</div>
+							<img src="..\Assets\Dewali.jpg" alt="My Picture" 
+								width="70%" height="70%" align="center">
+							<div class="text"> Not me matching the walls for Dewali lol</div>
+						</div>
+
+						<div class="mySlides fade">
+							<div class="numbertext">4 / 4</div>
+							<video src="..\Assets\Randonvideo.mp4" alt="Song" 
+								width="320" height="240" autoplay muted>
+								<source src="Randonvideo.mp4" type="video/mp4">
+								<source src="Randonvideo.ogg" type="video/ogg">
+							<div class="text"> Random video of a song</div>
+						</div>
+						
+						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+						<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+						<br>
+
+						<div style="text-align:center">
+							<span class="dot" onclick="currentSlide(1)"></span> 
+							<span class="dot" onclick="currentSlide(2)"></span> 
+							<span class="dot" onclick="currentSlide(3)"></span>
+							<span class="dot" onclick="currentSlide(4)"></span>
+						</div>
+					</div>
+
+				<script>
+					var slideIndex = 1;
+					showSlides(slideIndex);
+
+					function plusSlides(n) {
+					showSlides(slideIndex += n);
+					}
+
+					function currentSlide(n) {
+					showSlides(slideIndex = n);
+					}
+
+					function showSlides(n) {
+					var i;
+					var slides = document.getElementsByClassName("mySlides");
+					var dots = document.getElementsByClassName("dot");
+					if (n > slides.length) {slideIndex = 1}    
+					if (n < 1) {slideIndex = slides.length}
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";  
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex-1].style.display = "block";  
+					dots[slideIndex-1].className += " active";
+					}
+				</script> <br>
+				</section>
+			</td>
+			<td class="blank-row" width="20%"></td>
+		</tr>
+		<p style="padding-left:16px">Website Hosting <a href="">Link</a> </p>
+		
     </main><hr>
-<section align="center">
-	<!-- This allows the user to go to the top of the page. -->
-	<a href="#">Back to the top</a>
-</section>
-    <footer>
-        <p>&copy; 2023 Salema Giscombe. All rights reserved.</p>
-    </footer>
 </body>
+    <!-- <footer>
+        <p>&copy; 2023 Salema Giscombe. All rights reserved.</p>
+    </footer> -->
 </html>
